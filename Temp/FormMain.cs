@@ -19,7 +19,7 @@ namespace Temp
         /// <summary>
         /// 判断文件名称重复
         /// </summary>
-        private string mCurrentFileName = string.Empty;
+        private string mCurrentFileName = string.Empty;     
 
         private IUCBViewControl mBViewControl;
 

@@ -149,6 +149,52 @@ namespace Temp
         }
     }
 
+    public class Mile
+    {
+        /// <summary>
+        /// 初始化使用
+        /// </summary>
+        public Mile() { }
+
+        public Mile(short[] list)
+        {
+            // KM 和 M 的分离
+            if (list.Length < 2) { return; }
+            KM = list[0];
+            M = list[1];
+        }
+
+        public int KM { get; private set; }
+
+        public int M { get; private set; }
+
+        public string GetDisplayValue(xfMileUnit mileUnit)
+        {
+            switch (mileUnit)
+            {
+                case xfMileUnit.Yard:
+                    return string.Format("{0}ML{1}YD", KM.ToString("0000"), M.ToString("0000"));
+                case xfMileUnit.KM_MACType2:
+                    return string.Format("{0}km{1}dm", KM.ToString("0000"), M.ToString("0000"));
+                case xfMileUnit.KMOther:
+                    return string.Format("{0}km{1}m", KM.ToString("0000"), (M / 10).ToString("000"));
+                default:
+                    throw new NotImplementedException();
+            }
+
+        }
+
+        public static Mile Zero { get { return new Mile() { KM = 0, M = 0 }; } }
+    }
+
+    public enum xfMileUnit
+    {
+        Yard = 0,
+
+        KM_MACType2 = 1,
+
+        KMOther = 2
+    }
 
     public enum xfLineType
     {

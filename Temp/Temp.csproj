@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Business\BViewDrawSettingParameter.cs" />
+    <Compile Include="Business\ReplayInfo\DrawData\BottomWave.cs" />
+    <Compile Include="Business\ReplayInfo\DrawData\LabelData.cs" />
+    <Compile Include="Business\ReplayInfo\DrawData\xfActCode.cs" />
     <Compile Include="Business\xfDataType.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>

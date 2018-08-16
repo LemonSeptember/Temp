@@ -26,7 +26,7 @@ namespace Temp.UC
         /// <summary>
         /// 绘制对象
         /// </summary>
-        private IDrawOperator mDrawOperator = DrawOperatorFactory.GetDrawOperator(xfBViewMode.Mode0);
+        //private IDrawOperator mDrawOperator = DrawOperatorFactory.GetDrawOperator(xfBViewMode.Mode0);
 
         private int mPlayPointer = 0;
 
@@ -39,7 +39,7 @@ namespace Temp.UC
         /// <summary>
         /// 数据处理对象
         /// </summary>
-        private DataProcessor mDataProcessor;
+        //private DataProcessor mDataProcessor;
 
         /// <summary>
         /// 回放信息
