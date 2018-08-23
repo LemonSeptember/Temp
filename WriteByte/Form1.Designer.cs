@@ -36,7 +36,7 @@
             this.textBoxBit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonbuttonByteToBit = new System.Windows.Forms.Button();
+            this.buttonByteToBit = new System.Windows.Forms.Button();
             this.buttonBitToByte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -85,6 +85,7 @@
             this.textBoxByte.Size = new System.Drawing.Size(100, 21);
             this.textBoxByte.TabIndex = 4;
             this.textBoxByte.Text = "1";
+            this.textBoxByte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxByte_KeyPress);
             // 
             // textBoxBit
             // 
@@ -92,7 +93,8 @@
             this.textBoxBit.Name = "textBoxBit";
             this.textBoxBit.Size = new System.Drawing.Size(100, 21);
             this.textBoxBit.TabIndex = 5;
-            this.textBoxBit.Text = "1";
+            this.textBoxBit.Text = "00010001";
+            this.textBoxBit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBit_KeyPress);
             // 
             // label1
             // 
@@ -112,15 +114,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Bit";
             // 
-            // buttonbuttonByteToBit
+            // buttonByteToBit
             // 
-            this.buttonbuttonByteToBit.Location = new System.Drawing.Point(143, 319);
-            this.buttonbuttonByteToBit.Name = "buttonbuttonByteToBit";
-            this.buttonbuttonByteToBit.Size = new System.Drawing.Size(75, 23);
-            this.buttonbuttonByteToBit.TabIndex = 8;
-            this.buttonbuttonByteToBit.Text = "ByteToBit";
-            this.buttonbuttonByteToBit.UseVisualStyleBackColor = true;
-            this.buttonbuttonByteToBit.Click += new System.EventHandler(this.buttonbuttonByteToBit_Click);
+            this.buttonByteToBit.Location = new System.Drawing.Point(143, 319);
+            this.buttonByteToBit.Name = "buttonByteToBit";
+            this.buttonByteToBit.Size = new System.Drawing.Size(75, 23);
+            this.buttonByteToBit.TabIndex = 8;
+            this.buttonByteToBit.Text = "ByteToBit";
+            this.buttonByteToBit.UseVisualStyleBackColor = true;
+            this.buttonByteToBit.Click += new System.EventHandler(this.buttonByteToBit_Click);
             // 
             // buttonBitToByte
             // 
@@ -130,6 +132,7 @@
             this.buttonBitToByte.TabIndex = 9;
             this.buttonBitToByte.Text = "BitToByte";
             this.buttonBitToByte.UseVisualStyleBackColor = true;
+            this.buttonBitToByte.Click += new System.EventHandler(this.buttonBitToByte_Click);
             // 
             // Form1
             // 
@@ -137,7 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonBitToByte);
-            this.Controls.Add(this.buttonbuttonByteToBit);
+            this.Controls.Add(this.buttonByteToBit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxBit);
@@ -163,7 +166,7 @@
         private System.Windows.Forms.TextBox textBoxBit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonbuttonByteToBit;
+        private System.Windows.Forms.Button buttonByteToBit;
         private System.Windows.Forms.Button buttonBitToByte;
     }
 }

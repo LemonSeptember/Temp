@@ -85,19 +85,7 @@ namespace WriteByte
             textBox1.AppendText(Environment.NewLine + Environment.NewLine + data.Length);
             
         }
-
-
-        private byte BitToByte(byte[] array)
-        {
-            byte @byte=0;
-            for(int i = 0; i < 8; i++)
-            {
-                @byte += (byte)(2 * i * array[i]);
-            }
-            return @byte;
-        }
-
-        private void buttonbuttonByteToBit_Click(object sender, EventArgs e)
+        private void buttonByteToBit_Click(object sender, EventArgs e)
         {
             textBoxBit.Clear();
             
@@ -107,19 +95,82 @@ namespace WriteByte
                 textBoxBit.AppendText(text[i].ToString());
 
         }
+        private void buttonBitToByte_Click(object sender, EventArgs e)
+        {
+            textBoxByte.Clear();
+
+            byte[] array = Encoding.Default.GetBytes(textBoxBit.Text);
+            for (int i=0;i< 8; i++)
+            {
+                array[i] -= 48;
+            }
+            byte text = BitToByte(array);
+
+            textBoxByte.Text = text.ToString();
+
+        }
 
         private byte[] ByteToBit(byte @byte)
-         {
+        {
             byte[] array = new byte[8];
             for (int i = 0; i <= 7; i++)
             {
                 array[i] = (byte)(@byte & 0x01);
                 @byte = (byte)(@byte >> 1);
             }
-
             return array;
+        }
 
+        private byte BitToByte(byte[] array)
+         {
+            //byte @byte=0;
+            //int num = 256;
+            //for(int i = 0; i < 8; i++)
+            //{
+            //    num /= 2;
+            //    @byte += (byte)(array[i] * num);
+            //}
+            //return @byte;
+            byte @byte = 0;
+            for(int i = 0; i < 8; i++)
+            {
+                @byte = (byte)(@byte << 1);
+                @byte += array[i];
 
+            }
+            return @byte;
+        }
+
+        private void textBoxByte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                buttonByteToBit_Click(sender,e);
+            }
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxBit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                buttonBitToByte_Click(sender, e);
+            }
+            if (e.KeyChar == 48 || e.KeyChar == 49 || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

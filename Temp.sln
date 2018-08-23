@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteByte", "WriteByte\Writ
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{E9C59CD1-EE75-4E81-AB02-CBEEFC659430}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tabControl", "tabControl\tabControl.csproj", "{C6AC17D4-49A7-4488-912D-9C362E161D08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{C5254431-A0CA-4451-9B53-65D265DCD9C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9C59CD1-EE75-4E81-AB02-CBEEFC659430}.Debug|Any CPU.ActiveCfg = Debug
 		{E9C59CD1-EE75-4E81-AB02-CBEEFC659430}.Release|Any CPU.ActiveCfg = Release
+		{C6AC17D4-49A7-4488-912D-9C362E161D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6AC17D4-49A7-4488-912D-9C362E161D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6AC17D4-49A7-4488-912D-9C362E161D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6AC17D4-49A7-4488-912D-9C362E161D08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
