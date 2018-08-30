@@ -46,7 +46,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1068, 596);
+            this.tabControl1.Size = new System.Drawing.Size(1122, 619);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -66,7 +66,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(10);
-            this.tabPage2.Size = new System.Drawing.Size(1060, 570);
+            this.tabPage2.Size = new System.Drawing.Size(1114, 593);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -77,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 550);
+            this.panel1.Size = new System.Drawing.Size(1094, 573);
             this.panel1.TabIndex = 1;
             // 
             // ucFileQuery1
@@ -86,14 +86,14 @@
             this.ucFileQuery1.Location = new System.Drawing.Point(0, 0);
             this.ucFileQuery1.Margin = new System.Windows.Forms.Padding(10);
             this.ucFileQuery1.Name = "ucFileQuery1";
-            this.ucFileQuery1.Size = new System.Drawing.Size(1040, 550);
+            this.ucFileQuery1.Size = new System.Drawing.Size(1094, 573);
             this.ucFileQuery1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 596);
+            this.ClientSize = new System.Drawing.Size(1122, 619);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDataQueryArguent = new System.Windows.Forms.Panel();
             this.buttonResetDataQuery = new System.Windows.Forms.Button();
@@ -361,17 +361,17 @@
             this.dataGridViewDataQuery.AllowUserToAddRows = false;
             this.dataGridViewDataQuery.AllowUserToDeleteRows = false;
             this.dataGridViewDataQuery.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewDataQuery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewDataQuery.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewDataQuery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDataQuery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDataQuery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewDataQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDataQuery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
@@ -391,8 +391,8 @@
             this.dataGridViewDataQuery.Name = "dataGridViewDataQuery";
             this.dataGridViewDataQuery.ReadOnly = true;
             this.dataGridViewDataQuery.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewDataQuery.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewDataQuery.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewDataQuery.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewDataQuery.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewDataQuery.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -527,7 +527,6 @@
         private System.Windows.Forms.Button buttonDataQueryExportFile;
         private System.Windows.Forms.Button buttonDataQueryDeleteFile;
         private System.Windows.Forms.Button buttonDataQueryPlayFile;
-        private System.Windows.Forms.Button buttonDataQueryImportFile;
         private System.Windows.Forms.Panel panelDataQueryArguent;
         private System.Windows.Forms.Button buttonResetDataQuery;
         private System.Windows.Forms.ComboBox comboBoxDataQueryLine;
@@ -546,5 +545,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxDataQueryYear;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonDataQueryImportFile;
     }
 }
