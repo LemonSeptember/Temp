@@ -23,7 +23,9 @@ namespace Curve
         private void FormCurve_Load(object sender, EventArgs e)
         {
             createSeries();
+
             CreateChart();
+
             t.Stop();
         }
 
