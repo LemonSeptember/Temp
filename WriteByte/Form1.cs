@@ -47,7 +47,7 @@ namespace WriteByte
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                Filter = "配置文件(*.cfg)|*.cfg"
+                Filter = "配置文件|*.cfg"
             };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
