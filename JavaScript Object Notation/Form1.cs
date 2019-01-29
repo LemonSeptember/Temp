@@ -118,6 +118,44 @@ namespace JavaScript_Object_Notation
         {
             WriteJSON();
         }
+
+        private void buttonShow_Click(object sender, EventArgs e)
+        {
+            //Product product = new Product();
+            //product.Name = "Apple";
+            //product.Expiry = new DateTime(2008, 12, 28);
+            //product.Sizes = new string[] { "Small" };
+
+            //string json = JsonConvert.SerializeObject(product);
+
+
+            //JObject jObject = JsonConvert.DeserializeObject<JObject>(json);
+
+            JArray jArray = new JArray();
+            JObject jObject = new JObject();
+            //jObject["Name"] = "Lee";
+            //jArray.Add(jObject);
+            //jArray.Add("Manual text");
+            //jArray.Add(new DateTime(2000, 5, 23));
+            string jsonText = "[{'a':'aaa','b':'bbb','c':'ccc'},{'a':'aa','b':'bb,'c':'cc'}]";
+            jArray = JArray.Parse(jsonText);
+
+            foreach (var ss in jArray)  //查找某个字段与值
+            {
+                if (((JObject)ss)["a"].ToString() == "aa")
+
+                    richTextBox1.Text += ss.ToString();
+            }
+
+            //richTextBox1.Text = jArray["Name"].ToString();
+            //richTextBox1.Text += jArray[1].ToString();
+        }
+    }
+    class Product
+    {
+        public string Name;
+        public DateTime Expiry;
+        public string[] Sizes;
     }
 }
 

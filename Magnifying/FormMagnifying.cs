@@ -43,14 +43,14 @@ namespace Magnifying
         }
         private void Run()
         {
-            while (true)
-            {
-                if (pictureBox1.Image != null)
-                {
-                    this.BeginInvoke(myDraw);
-                }
-                Thread.Sleep(50);
-            }
+            //while (true)
+            //{
+            //    if (pictureBox1.Image != null)
+            //    {
+            //        //this.BeginInvoke(myDraw);
+            //    }
+            //    Thread.Sleep(50);
+            //}
         }
         private void ShowDrawRectangle()
         {
@@ -105,7 +105,7 @@ namespace Magnifying
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Windows\System32\Magnify.exe";
+            string fileName = @"Magnify.exe";
             OpenShellApplication(fileName);
         }
         private void OpenShellApplication(string FileName)

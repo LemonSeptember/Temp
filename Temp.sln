@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScript Object Notation"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressBar1", "ProgressBar1\ProgressBar1.csproj", "{FB7A7F67-5AA2-47B2-A143-6ADFD14449B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectAppPath", "SelectAppPath\SelectAppPath.csproj", "{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,14 @@ Global
 		{FB7A7F67-5AA2-47B2-A143-6ADFD14449B8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB7A7F67-5AA2-47B2-A143-6ADFD14449B8}.Release|x64.ActiveCfg = Release|Any CPU
 		{FB7A7F67-5AA2-47B2-A143-6ADFD14449B8}.Release|x64.Build.0 = Release|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Debug|x64.Build.0 = Debug|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Release|x64.ActiveCfg = Release|Any CPU
+		{16BE80C2-F7DB-40F8-A1CB-34A2C7C1CB24}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

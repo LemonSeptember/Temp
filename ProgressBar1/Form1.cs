@@ -42,15 +42,22 @@ namespace ProgressBar1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            value += 1;
-            if (value >= progressBar1.Maximum)
+            try
             {
-                value = progressBar1.Maximum;
-                timer1.Enabled = false;
+                value += 50;
+                //if (value >= progressBar1.Maximum)
+                //{
+                //    value = progressBar1.Maximum;
+                //    timer1.Enabled = false;
+                //}
+                //System.Threading.Thread.Sleep(500);
+                //progressBar1.PerformStep();
+                progressBar1.Value = value;
             }
-            //System.Threading.Thread.Sleep(500);
-            progressBar1.PerformStep();
-            //progressBar1.Value = value;
+            catch (System.Exception ex)
+            {
+                LogHelper.WriteLog(ex.ToString(), ex);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,5 +75,26 @@ namespace ProgressBar1
             value = progressBar1.Minimum;
             progressBar1.Value = value;
         }
+        public class LogHelper
+        {
+            public static readonly log4net.ILog loginfo = log4net.LogManager.GetLogger("loginfo");
+            public static readonly log4net.ILog logerror = log4net.LogManager.GetLogger("logerror");
+            public static void WriteLog(string info)
+            {
+                if (loginfo.IsInfoEnabled)
+                {
+                    loginfo.Info(info);
+                }
+            }
+
+            public static void WriteLog(string info, Exception ex)
+            {
+                if (logerror.IsErrorEnabled)
+                {
+                    logerror.Error(info, ex);
+                }
+            }
+        }
+
     }
 }
