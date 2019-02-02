@@ -15,8 +15,11 @@ namespace ReadGcaPicture
     public partial class FormPicture : Form
     {
         //private readonly int 
-        int picHeight = 340;
-        int picWidth = 640;
+        
+        private int picWidth = 640;
+        private int picHeight = 341;
+
+        private ToolTip mToolTip=new ToolTip();
 
         private AnalysisedData mAnalysisData;
         private string fileName;
@@ -31,16 +34,17 @@ namespace ReadGcaPicture
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormPicture_Load(object sender, EventArgs e)
         {
-
+            mToolTip.UseAnimation = false;
+            mToolTip.UseFading = false;
         }
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "GCA|*.gca;*.png",
+                Filter = "GCA|*.gca",
             };
             // TODO::添加默认路径
 
@@ -52,6 +56,8 @@ namespace ReadGcaPicture
                 ShowPicture();
             }
         }
+
+
         public byte[] GetPictureData(string imagepath)
         {
             /**/////根据图片文件的路径使用文件流打开，并保存为byte[] 
@@ -62,6 +68,12 @@ namespace ReadGcaPicture
             return byData;
         }
 
+        public Image ReturnPhoto(byte[] streamByte)
+        {
+            MemoryStream ms = new MemoryStream(streamByte);
+            Image img = Image.FromStream(ms);
+            return img;
+        }
 
         /// <summary>
         /// 打开文件
@@ -89,12 +101,6 @@ namespace ReadGcaPicture
             //pictureBox1.Image = ReturnPhoto(imageArray);
         }
 
-        public Image ReturnPhoto(byte[] streamByte)
-        {
-            MemoryStream ms = new MemoryStream(streamByte);
-            Image img = Image.FromStream(ms);
-            return img;
-        }
 
 
         private Bitmap GetBitmap()
@@ -122,27 +128,31 @@ namespace ReadGcaPicture
                             //imageArray[j] = (colorH << 8) + colorL;
                             //imageArray2[j] = mAnalysisData.xxc_list[i + j + 1];
                         }
-                        i += 217600 + 10;
+                        // TODO::两个标记点
+                        i += 217600 * 2;
                         break;
                     default:
                         break;
                 }
             }
-            Bitmap bitmap = new Bitmap(picWidth, 600);
+            Bitmap bitmap = new Bitmap(picWidth, picHeight);
             for (int y = 0; y < bitmap.Height; y++)
             {
                 for (int x = 0; x < bitmap.Width; x++)
                 {
-                    //Color color1=Color.FromArgb();
+                    Color color=GetColor(imageArray2[(y * bitmap.Width) + x]);
+
+                    bitmap.SetPixel(x, y, color);
+
                     //Color color = Color.FromArgb(x*y*10000000) ;
-                    if (imageArray2[(y * bitmap.Width) + x] == 0)
-                    {
-                        bitmap.SetPixel(x, y, Color.Black);
-                    }
-                    else
-                    {
-                        bitmap.SetPixel(x, y, Color.White);
-                    }
+                    //if (imageArray2[(y * bitmap.Width) + x] == 0)
+                    //{
+                    //    bitmap.SetPixel(x, y, Color.Black);
+                    //}
+                    //else
+                    //{
+                    //    bitmap.SetPixel(x, y, Color.White);
+                    //}
 
                 }
             }
@@ -154,12 +164,100 @@ namespace ReadGcaPicture
 
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        private Color GetColor(int key)
         {
-            //Graphics g = e.Graphics;
-            //Image bb = Image.FromStream(m);
-            //g.DrawImage(bb, new Point(0, 0));
-            //g.draw
+            Color value = new Color();
+            switch (key)
+            {
+                case 0xE0:// 纯红
+                    value = Color.FromArgb(255, 0, 0);
+                    break;
+
+                case 0xF0:// 橙
+                    value = Color.FromArgb(255, 128, 0);
+                    break;
+
+                case 0x03:// 纯蓝
+                    value = Color.FromArgb(0, 0, 255);
+                    break;
+
+                case 0x1C:// 纯绿
+                    value = Color.FromArgb(0, 255, 0);
+                    break;
+
+                case 0x1F:// 亮蓝
+                    value = Color.FromArgb(0, 255, 255);
+                    break;
+
+                case 0x8C:// 棕
+                    value = Color.FromArgb(144, 96, 0);
+                    break;
+
+                case 0xE3:// 紫红
+                    value = Color.FromArgb(255, 0, 255);
+                    break;
+
+                case 0xFC:// 黄
+                    value = Color.FromArgb(255, 255, 0);
+                    break;
+
+                case 0xFF:// 白
+                    value = Color.FromArgb(255, 255, 255);
+                    break;
+
+                case 0x00:// 黑
+                    value = Color.FromArgb(0, 0, 0);
+                    break;
+
+                case 0x10:// 深绿
+                    value = Color.FromArgb(0, 128, 0);
+                    break;
+
+                case 0xF2:// 粉红
+                    value = Color.FromArgb(255, 128, 128);
+                    break;
+
+                case 0x93:// 浅紫
+                    value = Color.FromArgb(128, 128, 255);
+                    break;
+
+                case 0x0D:// 蓝绿
+                    value = Color.FromArgb(0, 119, 119);
+                    break;
+
+                case 0x13:// 浅蓝
+                    value = Color.FromArgb(0, 128, 255);
+                    break;
+
+                case 0x6D:// 灰
+                    value = Color.FromArgb(110, 110, 110);
+                    break;
+
+
+                case 0xFE:// 背景色（浅黄）
+                    value = Color.FromArgb(255, 255, 200);
+                    break;
+
+                case 0x55:// 绿色填充
+                    value = Color.FromArgb(0, 176, 80);
+                    break;
+
+                case 0x80:// 红色填充
+                    value = Color.FromArgb(255, 0, 0);
+                    break;
+
+                case 0x02:// 黄色背景下字体（深绿）
+                    value = Color.FromArgb(0, 128, 0);
+                    break;
+
+
+                default:
+                    value = Color.White;
+                    Console.WriteLine(key);
+                    break;
+            }
+
+            return value;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -175,5 +273,45 @@ namespace ReadGcaPicture
             Console.WriteLine(picWidth);
             ShowPicture();
         }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            //mToolTip.SetToolTip(pictureBox1, e.Location.ToString());
+            //mToolTip.AutoPopDelay = 5000;
+            //mToolTip.ShowAlways = false;
+            //Console.WriteLine(e.Location.ToString());
+
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mToolTip.SetToolTip(pictureBox1, e.Location.ToString());
+        }
+
+    }
+
+
+    class ColorInfo
+    {
+        int Key;
+        private Color _value;
+
+        Color value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+            }
+        }
+
+        public ColorInfo(int key)
+        {
+            Key = key;
+        }
+
     }
 }
