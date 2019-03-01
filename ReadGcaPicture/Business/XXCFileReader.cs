@@ -632,7 +632,7 @@ namespace XianFeng.Railway.Replay
         /// <summary>
         /// 不同机型倒车空白追加不同
         /// </summary>
-        /// <param name="macType">0 - GCT-8C 1-GCT-11 2-SP 3-GL</param>
+        /// <param name="macType">0-8C，1-11,2-SP，3-8C+china，4-8C+India,5-8C+sperry</param>
         /// <returns>倒车空白长度</returns>
         private int GetBackAddStepSize(int macType)
         {
@@ -642,10 +642,11 @@ namespace XianFeng.Railway.Replay
                 case 1:
                     return 400;
                 case 2:
+                case 3:
+                case 4:
+                case 5:
                     return 0;
                 default:
-                    //Console.WriteLine(macType);
-                    return 0;
                     throw new ArgumentOutOfRangeException();
             }
         }

@@ -43,6 +43,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadGcaPicture", "ReadGcaPi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBoxDemo", "PictureBoxDemo\PictureBoxDemo.csproj", "{F0E8A059-E1F9-4231-84A0-F0DA6DA208E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorDialogDemo", "ColorDialogDemo\ColorDialogDemo.csproj", "{0F09D85F-027A-4F96-BDC1-16446D7E6817}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsTest", "WindowsFormsTest\WindowsFormsTest.csproj", "{98B69634-E373-4BD9-869E-5E3F3AC78ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +213,22 @@ Global
 		{F0E8A059-E1F9-4231-84A0-F0DA6DA208E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0E8A059-E1F9-4231-84A0-F0DA6DA208E1}.Release|x64.ActiveCfg = Release|Any CPU
 		{F0E8A059-E1F9-4231-84A0-F0DA6DA208E1}.Release|x64.Build.0 = Release|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Debug|x64.Build.0 = Debug|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Release|x64.ActiveCfg = Release|Any CPU
+		{0F09D85F-027A-4F96-BDC1-16446D7E6817}.Release|x64.Build.0 = Release|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Debug|x64.Build.0 = Debug|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Release|x64.ActiveCfg = Release|Any CPU
+		{98B69634-E373-4BD9-869E-5E3F3AC78ACB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

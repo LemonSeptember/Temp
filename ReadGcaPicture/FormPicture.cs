@@ -96,7 +96,13 @@ namespace ReadGcaPicture
         private void ShowPicture()
         {
             Bitmap bitmap = GetBitmap();
+            //pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
             pictureBox1.Image = bitmap;
+
+
+            //pictureBox1.BackgroundImage = bitmap;
+            //pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
 
             //pictureBox1.Image = ReturnPhoto(imageArray);
         }
@@ -247,7 +253,7 @@ namespace ReadGcaPicture
                     break;
 
                 case 0x02:// 黄色背景下字体（深绿）
-                    value = Color.FromArgb(0, 128, 0);
+                    value = Color.FromArgb(0, 0, 255);
                     break;
 
 
