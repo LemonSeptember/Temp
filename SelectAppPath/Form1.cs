@@ -33,6 +33,19 @@ namespace SelectAppPath
             richTextBox1.AppendText(System.Windows.Forms.Application.ExecutablePath);
             richTextBox1.AppendText("\n");
             richTextBox1.AppendText(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase);
+            richTextBox1.AppendText("\n");
+            richTextBox1.AppendText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "list.csv"));
+            richTextBox1.AppendText("\n");
+            string filePath = Path.Combine("C:\\name", "path", "list.csv ");
+            string fileName = Path.GetFileName(filePath);
+            string fileName1 = Path.GetFileName(fileName);
+            richTextBox1.AppendText(Path.Combine("C:\\name", "path", "list.csv "));
+            richTextBox1.AppendText("\n");
+            richTextBox1.AppendText(fileName);
+            richTextBox1.AppendText("\n");
+            richTextBox1.AppendText(fileName1);
+            richTextBox1.AppendText("\n");
+
 
             // 1.System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName
             //    获取模块的完整路径。
@@ -48,6 +61,39 @@ namespace SelectAppPath
             //    获取启动了应用程序的可执行文件的路径及文件名，效果和1一样。
             // 7.System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase
             //    获取和设置包括该应用程序的目录的名称。
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "所有文件|*.*|GCA|*.gca",
+            };
+            if (DialogResult.OK == openFileDialog.ShowDialog())
+            {
+                string filePath = openFileDialog.FileName;
+                string fileName = string.Empty;
+                richTextBox1.ResetText();
+                richTextBox1.AppendText(filePath);
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetFullPath(filePath));
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetDirectoryName(filePath));
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetExtension(filePath));
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetFileName(filePath));
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetFileNameWithoutExtension(filePath));
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetPathRoot(filePath));
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText(Path.GetRandomFileName());
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText("\n");
+                richTextBox1.AppendText("\n");
+
+            }
         }
     }
 }
