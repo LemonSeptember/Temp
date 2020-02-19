@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CaptureScreen
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace CaptureScreen
             //captureControl(pictureBox1);
 
             FormPicture formPicture = new FormPicture();
-            formPicture.b = captureControl(pictureBox1);
+            formPicture.bitmap = captureControl(panel_Main);
             formPicture.ShowDialog();
         }
 
@@ -53,29 +53,76 @@ namespace CaptureScreen
 
         }
 
-        #region  DLL calls  
+
+        #region  DLL calls
+
         [DllImport("gdi32.dll")]
-        static extern bool BitBlt(IntPtr hdcDest, int xDest, int yDest, int
-        wDest, int hDest, IntPtr hdcSource, int xSrc, int ySrc, CopyPixelOperation rop);
+        static extern bool BitBlt(IntPtr hdcDest, int xDest, int yDest, int wDest, int hDest, IntPtr hdcSource, int xSrc, int ySrc, CopyPixelOperation rop);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hDc">handle to DC</param>
+        /// <returns></returns>
         [DllImport("gdi32.dll")]
         static extern IntPtr DeleteDC(IntPtr hDc);
+
         [DllImport("gdi32.dll")]
         static extern IntPtr DeleteObject(IntPtr hDc);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hdc">handle to DC</param>
+        /// <param name="nWidth">width of bitmap, in pixels</param>
+        /// <param name="nHeight">height of bitmap, in pixels</param>
+        /// <returns></returns>
         [DllImport("gdi32.dll")]
         static extern IntPtr CreateCompatibleBitmap(IntPtr hdc, int nWidth, int nHeight);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hdc">handle to DC</param>
+        /// <returns></returns>
         [DllImport("gdi32.dll")]
         static extern IntPtr CreateCompatibleDC(IntPtr hdc);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hdc">handle to DC</param>
+        /// <param name="bmp">handle to object</param>
+        /// <returns></returns>
         [DllImport("gdi32.dll")]
         static extern IntPtr SelectObject(IntPtr hdc, IntPtr bmp);
+
         [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
+
         [DllImport("user32.dll")]
         public static extern IntPtr GetWindowDC(IntPtr ptr);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hwnd">Window to copy,Handle to the window that will be copied.</param>
+        /// <param name="hdcBlt">HDC to print into,Handle to the device context.</param>
+        /// <param name="nFlags">Optional flags,Specifies the drawing options. It can be one of the following values.param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern bool PrintWindow(IntPtr hwnd, IntPtr hdcBlt, UInt32 nFlags);
+
         [DllImport("user32.dll")]
         static extern bool ReleaseDC(IntPtr hWnd, IntPtr hDc);
         #endregion
 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormMain form1 = new FormMain();
+            form1.TopMost = true;
+            form1.Show();
+        }
     }
 }

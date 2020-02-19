@@ -12,7 +12,7 @@ namespace CaptureScreen
     public partial class FormPicture : Form
     {
 
-        public Bitmap b { get; set; }
+        public Bitmap bitmap { get; set; }
 
         public FormPicture()
         {
@@ -26,17 +26,18 @@ namespace CaptureScreen
 
         private void ShowImage()
         {
-            var g = Graphics.FromImage(b);
+            //var g = Graphics.FromImage(bitmap);
 
-            var screenPoint = PointToScreen(pictureBox1.Location);
-            //拷贝屏幕区域到Bitmap
-            g.CopyFromScreen(new Point(0,0), new Point(0, 0), new Size(pictureBox1.Width, pictureBox1.Height));
-            //存文件
-            //catchBmp.Save(string.Format(@"D:\image\{0}.jpg", MAC));
+            //var screenPoint = PointToScreen(pictureBox1.Location);
+            ////拷贝屏幕区域到Bitmap
+            //g.CopyFromScreen(new Point(0,0), new Point(0, 0), new Size(pictureBox1.Width, pictureBox1.Height));
+            ////存文件
+            ////catchBmp.Save(string.Format(@"D:\image\{0}.jpg", MAC));
 
-            g.DrawImage(b, 0, 0, pictureBox1.Width, pictureBox1.Height);
+            //g.DrawImage(bitmap, 0, 0, pictureBox1.Width, pictureBox1.Height);
 
-            pictureBox1.Image = b;
+            pictureBox1.Image = bitmap;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void CaptureScreen()
@@ -50,7 +51,7 @@ namespace CaptureScreen
             Rectangle rectangle = new Rectangle(0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             using (Graphics g1 = Graphics.FromImage(bitmap))
             {
-                
+
                 g1.CopyFromScreen(0, 0, 0, 0, rectangle.Size);
                 g1.DrawImage(bitmap, -(ActiveForm.Location.X), -(ActiveForm.Location.Y), Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
                 pictureBox1.Image = bitmap;
@@ -68,7 +69,7 @@ namespace CaptureScreen
             //存文件
             //catchBmp.Save(string.Format(@"D:\image\{0}.jpg", MAC));
 
-            g.DrawImage(catchBmp, 0, 0, pictureBox1.Width,pictureBox1.Height);
+            g.DrawImage(catchBmp, 0, 0, pictureBox1.Width, pictureBox1.Height);
 
             pictureBox1.Image = catchBmp;
         }

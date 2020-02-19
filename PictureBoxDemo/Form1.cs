@@ -43,5 +43,32 @@ namespace PictureBoxDemo
             return bitmap;
 
         }
+
+
+        //文件名
+        private string curFileName;
+        //图像对象
+        private Bitmap curBitmap;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opndlg = new OpenFileDialog();
+            opndlg.Filter = "所有图像文件|*.bmp;*.pcx;*.png;*.jpg;*.gif";
+            opndlg.Title = "打开图像文件";
+            if (opndlg.ShowDialog() == DialogResult.OK)
+            {
+                curFileName = opndlg.FileName;
+                try
+                {
+                    curBitmap = (Bitmap)Image.FromFile(curFileName);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            pictureBox1.Image = curBitmap;
+            //Invalidate();
+        }
     }
 }

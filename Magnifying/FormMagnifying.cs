@@ -24,8 +24,9 @@ namespace Magnifying
             InitializeComponent();
         }
 
+        FormBView formBView = new FormBView();
 
-        
+
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -121,6 +122,26 @@ namespace Magnifying
             {
                 MessageBox.Show("系统调用[" + FileName + "]应用程序出错！");
             };
+        }
+
+        private void button_OpenMagnify_Click(object sender, EventArgs e)
+        {
+            //using (FormBView form = new FormBView())
+            //{
+            //    form.ShowDialog();
+            //}
+            formBView.Show();
+        }
+
+        private void FormMagnifying_MouseDown(object sender, MouseEventArgs e)
+        {
+            formBView.SetValue(e.X);
+
+        }
+
+        private void button_Close_Click(object sender, EventArgs e)
+        {
+            formBView.Visible = false;
         }
     }
 }
