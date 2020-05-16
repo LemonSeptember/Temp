@@ -86,7 +86,7 @@ namespace ExportWordWithOpenXMLSDK
             }
 
         }
-       
+
         private static void AddImageToBody(WordprocessingDocument wordDoc, string relationshipId)
         {
             // Define the reference of the image.
@@ -898,7 +898,7 @@ namespace ExportWordWithOpenXMLSDK
             }
         }
 
-        private Paragraph AddImageToParagraph(string relationshipId,long width,long heigth)
+        private Paragraph AddImageToParagraph(string relationshipId, long width, long heigth)
         {
 
             var element =
@@ -1006,6 +1006,66 @@ namespace ExportWordWithOpenXMLSDK
             //    imagePart.FeedData(stream);
             //}
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// 设置标签数据
+        /// </summary>
+        /// <param name="lableData">标签数据</param>
+        public void SetLableData(Dictionary<string, string> lableData, WordprocessingDocument wordDoc, List<Paragraph> thisParagraphs)
+        {
+            if (wordDoc == null)
+                throw new Exception("word parse failed.");
+            if (lableData == null)
+                throw new Exception("lableData can not be null.");
+            if (thisParagraphs.Count == 0)
+                return;
+            var items = lableData.GetEnumerator();
+            while (items.MoveNext())
+            {
+                var item = items.Current;
+                foreach (var paragraph in thisParagraphs)
+                {
+                    if (!paragraph.InnerText.Contains(item.Key))
+                        continue;
+                    var run = paragraph.Elements<DocumentFormat.OpenXml.Wordprocessing.Run>().FirstOrDefault(g => g.InnerText.Trim() == item.Key);
+                    var text = run?.Elements<DocumentFormat.OpenXml.Wordprocessing.Text>().FirstOrDefault(g => g.Text.Trim() == item.Key);
+                    if (text != null)
+                    {
+                        text.Text = item.Value;
+                    }
+                }
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string wordDot = "";
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        wordDot = openFileDialog.FileName;
+                    }
+                }
+                using (var document = WordprocessingDocument.Open(wordDot, true))
+                {
+                    var doc = document.MainDocumentPart.Document;
+                    // Code removed here…
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

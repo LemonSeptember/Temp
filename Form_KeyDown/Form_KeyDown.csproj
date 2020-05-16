@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A6033F18-0171-42FA-812D-8B22777C7BB6}</ProjectGuid>
+    <ProjectGuid>{627E04C2-B382-4DDB-814E-1BE6AC208B2E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ExportWordWithOpenXMLSDK</RootNamespace>
-    <AssemblyName>ExportWordWithOpenXMLSDK</AssemblyName>
+    <RootNamespace>Form_KeyDown</RootNamespace>
+    <AssemblyName>Form_KeyDown</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,12 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DocumentFormat.OpenXml, Version=2.10.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocumentFormat.OpenXml.2.10.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,19 +42,21 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExportWordWithOpenXMLSDK.cs">
+    <Compile Include="Form_KeyDown.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExportWordWithOpenXMLSDK.Designer.cs">
-      <DependentUpon>ExportWordWithOpenXMLSDK.cs</DependentUpon>
+    <Compile Include="Form_KeyDown.Designer.cs">
+      <DependentUpon>Form_KeyDown.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ExportWordWithOpenXMLSDK.resx">
-      <DependentUpon>ExportWordWithOpenXMLSDK.cs</DependentUpon>
+    <Compile Include="UCNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form_KeyDown.resx">
+      <DependentUpon>Form_KeyDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,7 +67,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
