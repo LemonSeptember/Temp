@@ -23,29 +23,39 @@ namespace MediaPlayer
             {
                 axWindowsMediaPlayer1.URL = openFileDialog.FileName;
             }
-            axWindowsMediaPlayer1.Ctlcontrols.pause();
+            //axWindowsMediaPlayer1.Ctlcontrols.pause();
 
-            axWindowsMediaPlayer1.Ctlcontrols.currentPosition = 60;
-            
+            //axWindowsMediaPlayer1.Ctlcontrols.currentPosition = 60;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.currentPosition = 60;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);           // 当前时间（double）  
-            Console.WriteLine(axWindowsMediaPlayer1.Ctlcontrols.currentPositionString);     // 当前时间（00:00）
+           
+                //Console.WriteLine(axWindowsMediaPlayer1.Ctlcontrols.currentPosition);           // 当前时间（double）  
+                //Console.WriteLine(axWindowsMediaPlayer1.Ctlcontrols.currentPositionString);     // 当前时间（00:00）
 
-            Console.WriteLine(axWindowsMediaPlayer1.currentMedia.duration);                 // 总时间（double）
-            Console.WriteLine(axWindowsMediaPlayer1.currentMedia.durationString);           // 总时间（00:00）
+                //Console.WriteLine(axWindowsMediaPlayer1.currentMedia.duration);                 // 总时间（double）
+                //Console.WriteLine(axWindowsMediaPlayer1.currentMedia.durationString);           // 总时间（00:00）
+
+                Console.WriteLine(axWindowsMediaPlayer1.settings.autoStart);
+         
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
+
+        private void FormMediaPlayer_Load(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.settings.autoStart = false;
         }
     }
 }

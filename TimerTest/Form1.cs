@@ -13,10 +13,10 @@ namespace TimerTest
 {
     public partial class Form1 : Form
     {
-        DateTime dtFrom = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-        int timeValue = 0;
-
-        BlockingCollection<string> ExportStr = new BlockingCollection<string>();
+        private DateTime dtFrom = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        private int timeValue = 0;
+        private BlockingCollection<string> ExportStr = new BlockingCollection<string>();
+        private System.Timers.Timer mTimer_2 = new System.Timers.Timer();
         public Form1()
         {
             InitializeComponent();
@@ -25,11 +25,15 @@ namespace TimerTest
         private void Form1_Load(object sender, EventArgs e)
         {
             numericUpDown1.Value = mTimer.Interval;
+            mTimer_2.Interval = (int)numericUpDown1.Value;
+            mTimer_2.Elapsed += mTimer_2_Elapsed;
         }
+
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             mTimer.Interval = (int)numericUpDown1.Value;
+            mTimer_2.Interval= (int)numericUpDown1.Value;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +48,17 @@ namespace TimerTest
             //timeValue = 0;
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ExportStr = new BlockingCollection<string>();
+            mTimer_2.Start();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            mTimer_2.Stop();
+        }
+
         private void mTimer_Tick(object sender, EventArgs e)
         {
             //timeValue++;
@@ -52,6 +67,11 @@ namespace TimerTest
             //Console.WriteLine(DateTime.Now.ToString("mm:ss.ffff"));
             ExportStr.Add(DateTime.Now.ToString("mm:ss.ffff"));
 
+        }
+
+        private void mTimer_2_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            ExportStr.Add(DateTime.Now.ToString("mm:ss.ffff"));
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -75,5 +95,6 @@ namespace TimerTest
                 }
             }
         }
+
     }
 }

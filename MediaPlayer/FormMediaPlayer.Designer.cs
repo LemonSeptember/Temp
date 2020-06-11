@@ -98,6 +98,7 @@
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Name = "FormMediaPlayer";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormMediaPlayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
