@@ -21,10 +21,10 @@ namespace 防止多次启动程序
             {
                 if (createNew)
                 {
-                    LogHelper.WriteLog("程序启动");
+                    //LogHelper.WriteLog("程序启动");
                     Process currentProcess = Process.GetCurrentProcess();
                     LogHelper.WriteLog(currentProcess.ProcessName);
-                    LogHelper.WriteLog(currentProcess.Id.ToString());
+                    //LogHelper.WriteLog(currentProcess.Id.ToString());
 
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
@@ -51,7 +51,7 @@ namespace 防止多次启动程序
         {
             Process currentProcess = Process.GetCurrentProcess();
             LogHelper.WriteLog(currentProcess.ProcessName, new Exception("错误"));
-            LogHelper.WriteLog(currentProcess.Id.ToString(), new Exception("错误"));
+            //LogHelper.WriteLog(currentProcess.Id.ToString(), new Exception("错误"));
 
             foreach (Process process in Process.GetProcessesByName(currentProcess.ProcessName))
             {
@@ -103,5 +103,6 @@ namespace 防止多次启动程序
         /// <returns></returns>
         [DllImport("User32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
+
     }
 }
