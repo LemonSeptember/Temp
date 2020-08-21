@@ -1,6 +1,6 @@
 ﻿namespace MillisecondTimer
 {
-    partial class Form1
+    partial class FormMillisecondTimer
     {
         /// <summary>
         /// 必需的设计器变量。

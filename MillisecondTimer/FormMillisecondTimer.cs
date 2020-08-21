@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace MillisecondTimer
 {
-    public partial class Form1 : Form
+    public partial class FormMillisecondTimer : Form
     {
-        public Form1()
+        public FormMillisecondTimer()
         {
             InitializeComponent();
         }
