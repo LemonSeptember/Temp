@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace HT10D
 {
     public partial class UCAView : UserControl
     {
-
         #region 成员
 
         /// <summary>
@@ -94,9 +89,7 @@ namespace HT10D
         /// </summary>
         private bool mInitialized = false;
 
-
         #endregion
-
 
         #region 属性
 
@@ -150,14 +143,12 @@ namespace HT10D
         /// </summary>
         public int EnvelopePoint;
 
-
         #endregion
 
         public UCAView()
         {
             InitializeComponent();
         }
-
 
         #region 控件事件
 
@@ -182,7 +173,6 @@ namespace HT10D
         }
 
         #endregion
-
 
         #region 公共方法
 
@@ -215,9 +205,7 @@ namespace HT10D
             RefreshImage();
         }
 
-
         #endregion
-
 
         #region 私有方法
 
@@ -233,7 +221,6 @@ namespace HT10D
                 return;
             }
 
-
             // 绘制背景
             if (IfDrawBackImage)
             {
@@ -244,8 +231,7 @@ namespace HT10D
                 IfDrawBackImage = false;
             }
 
-
-            // 绘制图像         
+            // 绘制图像
             {
                 Bitmap bitmap = new Bitmap(pictureBox.Image);
                 if (!mEnvelope)
@@ -264,7 +250,6 @@ namespace HT10D
             }
             //GC.Collect();
         }
-
 
         #region 绘制方法
 
@@ -293,7 +278,6 @@ namespace HT10D
                 float cenY = sublineHeight * i;
                 g.DrawLine(pen, 0, cenY, pictureBox.Width, cenY);
             }
-
         }
 
         /// <summary>
@@ -327,7 +311,6 @@ namespace HT10D
             //SolidBrush gateBrush = new SolidBrush(Color.Blue);
 
             g.FillRectangle(gateBrush, new RectangleF(cenX1, cenY, cenX2, GATE_VALUE));
-
         }
 
         /// <summary>
@@ -336,7 +319,6 @@ namespace HT10D
         /// <param name="g"></param>
         private void DrawAView(Graphics g)
         {
-
             int index = StartPoint + PlayPoint;
 
             if (index >= mHT10D_Info.AViewList.Count) { return; }
@@ -364,13 +346,10 @@ namespace HT10D
                 g.DrawLine(pen, lastPoint, thisPoint);
 
                 lastPoint = thisPoint;
-
             }
-
         }
 
         #endregion
-
 
         /// <summary>
         /// 获取闸门前沿
@@ -460,10 +439,10 @@ namespace HT10D
             //}
             switch (mChannelNo)
             {
-
                 case xfChannelNo.A:
                     channelColor = channelA_Color;
                     break;
+
                 case xfChannelNo.B:
                     channelColor = channelB_Color;
                     break;
@@ -472,7 +451,5 @@ namespace HT10D
         }
 
         #endregion
-
-
     }
 }

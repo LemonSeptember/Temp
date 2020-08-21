@@ -58,5 +58,23 @@ namespace DateTimeTest
             }
             Console.WriteLine(dateTime.ToString(@"HH\:mm\:ss"));
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // 2020/1/1 12:00:00
+            DateTime dateTime0 = new DateTime(2020, 1, 1, 12, 0, 0);
+            // 2020/1/1 12:01:00
+            DateTime dateTime1 = new DateTime(2020, 1, 1, 12, 1, 0);
+            // 2020/1/1 12:00:01
+            DateTime dateTime2 = new DateTime(2020, 1, 1, 12, 0, 1);
+
+            TimeSpan timeSpan1 = dateTime1 - dateTime0;
+            TimeSpan timeSpan2 = dateTime2 - dateTime0;
+
+            Console.Write(dateTime1.ToLongTimeString() + " - " + dateTime0.ToLongTimeString());
+            Console.WriteLine(" = " + timeSpan1.Milliseconds);
+            Console.Write(dateTime2.ToLongTimeString() + " - " + dateTime0.ToLongTimeString());
+            Console.WriteLine(" = " + timeSpan2.Milliseconds);
+        }
     }
 }

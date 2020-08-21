@@ -1,8 +1,8 @@
 ﻿using log4net;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
+//为项目注册Log4Net.config配置文件
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config", Watch = true)]
 
 /// <summary>
 /// 日志输出
@@ -31,7 +31,6 @@ namespace Log4Net
                 logerror.Error(info, ex);
             }
         }
-
 
         /// <summary>
         /// 输出日志到Log4Net

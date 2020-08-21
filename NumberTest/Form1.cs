@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace NumberTest
@@ -23,10 +17,9 @@ namespace NumberTest
             //numericUpDown2.Value = (decimal)(b1 * 3.23);
 
             double a1;
-            a1 = (double)numericUpDown1.Value/ 3.23;
-            decimal d1= (decimal)(a1 * 3.23);
+            a1 = (double)numericUpDown1.Value / 3.23;
+            decimal d1 = (decimal)(a1 * 3.23);
             numericUpDown2.Value = d1;
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,7 +34,7 @@ namespace NumberTest
             char[] fileName = new char[20];
             for (int i = 0; i < 20; i++)
             {
-                fileName[i] =(char)97;
+                fileName[i] = (char)97;
             }
             label2.Text = string.Join("", fileName);
         }

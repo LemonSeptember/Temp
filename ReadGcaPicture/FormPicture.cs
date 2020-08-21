@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -14,14 +12,13 @@ namespace ReadGcaPicture
 {
     public partial class FormPicture : Form
     {
-        //private readonly int 
+        //private readonly int
         private const int PicLength = 218240;
-
 
         private int picWidth = 640;
         private int picHeight = 341;
 
-        private ToolTip mToolTip=new ToolTip();
+        private ToolTip mToolTip = new ToolTip();
 
         private AnalysisedData mAnalysisData;
         private string fileName;
@@ -60,12 +57,13 @@ namespace ReadGcaPicture
 
             if (DialogResult.OK == openFileDialog.ShowDialog())
             {
-                fileName =openFileDialog.FileName;
+                fileName = openFileDialog.FileName;
                 OpenFile(openFileDialog.FileName);
                 //imageArray = GetPictureData(openFileDialog.FileName);
                 ShowPicture();
             }
         }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Bitmap saveBitmap = new Bitmap(700, 960);
@@ -75,9 +73,7 @@ namespace ReadGcaPicture
                 Bitmap bitmap = GetBitmap();
                 g.DrawImage(bitmap, 30, 50);
 
-
                 DrawGcaInfo(g);
-
             }
             string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
@@ -88,7 +84,7 @@ namespace ReadGcaPicture
         private void button3_Click(object sender, EventArgs e)
         {
             GetListArray();
-            
+
             SaveCSV();
         }
 
@@ -126,7 +122,6 @@ namespace ReadGcaPicture
             //mToolTip.AutoPopDelay = 5000;
             //mToolTip.ShowAlways = false;
             //Console.WriteLine(e.Location.ToString());
-
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -138,8 +133,8 @@ namespace ReadGcaPicture
 
         public byte[] GetPictureData(string imagepath)
         {
-            /**/////根据图片文件的路径使用文件流打开，并保存为byte[] 
-            FileStream fs = new FileStream(imagepath, FileMode.Open);//可以是其他重载方法 
+            /**/////根据图片文件的路径使用文件流打开，并保存为byte[]
+            FileStream fs = new FileStream(imagepath, FileMode.Open);//可以是其他重载方法
             byte[] byData = new byte[fs.Length];
             fs.Read(byData, 0, byData.Length);
             fs.Close();
@@ -155,7 +150,6 @@ namespace ReadGcaPicture
 
         #endregion
 
-
         /// <summary>
         /// 打开文件
         /// </summary>
@@ -169,7 +163,7 @@ namespace ReadGcaPicture
 
             XXCFileReader xxcFileReader = new XXCFileReader();
             mAnalysisData = xxcFileReader.ReadFileSummary(fileName);
-            
+
             // TODO::修改标题
             this.Text = Path.GetFileName(fileName);
         }
@@ -187,19 +181,11 @@ namespace ReadGcaPicture
             //    }
             //}
 
-            
-
-
             //using (Graphics g = Graphics.FromImage(bitmap))
             //{
-
-
-
             //}
 
-
             pictureBox1.Image = bitmap;
-
 
             //pictureBox1.BackgroundImage = bitmap;
             //pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
@@ -220,22 +206,19 @@ namespace ReadGcaPicture
                         {
                             foreach (var column in row)
                             {
-                                sw.Write(column+",");
+                                sw.Write(column + ",");
                             }
                             sw.Write("\r\n");
-
                         }
                     }
                 }
                 MessageBox.Show("导出文件成功", "提示", MessageBoxButtons.OK);
-
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
         }
-
 
         /// <summary>
         /// 获取图片
@@ -251,34 +234,40 @@ namespace ReadGcaPicture
                 xfActCode actCode = (xfActCode)mAnalysisData.xxc_list[i];
                 switch (actCode)
                 {
-
                     case xfActCode.Gate0Head:
                         ShowA_GATE[0] = xxa_list[i + 2];
                         //mGcaInfo.GatePos = string.Concat(ShowA_GATE[0]);
                         //i += 2;
                         break;
+
                     case xfActCode.Gate0Tail:
                         ShowA_GATE[1] = xxa_list[i + 2];
                         //mGcaInfo.GateWid = string.Concat((ShowA_GATE[1] - ShowA_GATE[0]));
                         //i += 2;
                         break;
+
                     case xfActCode.Gate1Head:
                         ShowA_GATE[2] = xxa_list[i + 2];
                         break;
+
                     case xfActCode.Gate1Tail:
                         ShowA_GATE[3] = xxa_list[i + 2];
                         break;
+
                     case xfActCode.Gate2Head:
                         ShowA_GATE[4] = xxa_list[i + 2];
                         break;
+
                     case xfActCode.Gate2Tail:
                         ShowA_GATE[5] = xxa_list[i + 2];
                         break;
+
                     case xfActCode.BackAlarm:
                         ShowA_GATE[6] = xxa_list[i + 2];
                         //mGcaInfo.GateHit = string.Concat(xxa_list[i + 2]);
                         //i += 2;
                         break;
+
                     case xfActCode.PassAlarm:
                         ShowA_GATE[7] = xxa_list[i + 2];
                         break;
@@ -308,6 +297,7 @@ namespace ReadGcaPicture
                             i += PicLength;
                         }
                         break;
+
                     default:
                         break;
                 }
@@ -317,7 +307,7 @@ namespace ReadGcaPicture
             {
                 for (int x = 0; x < bitmap.Width; x++)
                 {
-                    Color color=GetColor(imageArray2[(y * bitmap.Width) + x]);
+                    Color color = GetColor(imageArray2[(y * bitmap.Width) + x]);
 
                     bitmap.SetPixel(x, y, color);
 
@@ -330,7 +320,6 @@ namespace ReadGcaPicture
                     //{
                     //    bitmap.SetPixel(x, y, Color.White);
                     //}
-
                 }
             }
 
@@ -338,7 +327,6 @@ namespace ReadGcaPicture
             //b.Save(m, ImageFormat.Bmp);
 
             return bitmap;
-
         }
 
         private Color GetColor(int key)
@@ -410,7 +398,6 @@ namespace ReadGcaPicture
                     value = Color.FromArgb(110, 110, 110);
                     break;
 
-
                 case 0xFE:// 背景色（浅黄）
                     value = Color.FromArgb(255, 255, 200);
                     break;
@@ -426,7 +413,6 @@ namespace ReadGcaPicture
                 case 0x02:// 黄色背景下字体（深绿）
                     value = Color.FromArgb(0, 0, 255);
                     break;
-
 
                 default:
                     value = Color.White;
@@ -488,7 +474,6 @@ namespace ReadGcaPicture
 
             g.DrawString(str.ToString(), font, Brushes.Black, new Point(30, 440));
             //g.DrawLine(new Pen(Color.Black), new Point(10, 400), new Point(50, 400));
-
         }
 
         private void buttonSaveFile_Click(object sender, EventArgs e)
@@ -496,9 +481,8 @@ namespace ReadGcaPicture
             //string filePath = Path.GetDirectoryName(fileName) + "\\"+DateTime.Now.ToString("yyyyMMddHHmmss")+".xxc";
 
             SaveFile(fileName);
-
-
         }
+
         /// <summary>
         /// 保存文件
         /// </summary>
@@ -509,7 +493,6 @@ namespace ReadGcaPicture
             string fileName = Path.GetFileNameWithoutExtension(fileAdress) + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(fileAdress);
             string oldFileAdress = fileAdress;
             string newFileAdress = Path.Combine(Path.GetDirectoryName(fileAdress), fileName);
-
 
             string readFile = fileAdress;
             //string writeFile = Path.Combine(Path.GetDirectoryName(FileName), (Path.GetFileNameWithoutExtension(FileName) + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xxc"));
@@ -541,11 +524,8 @@ namespace ReadGcaPicture
                         {
                             byte b1 = 125;
                             bw.Write(b1);
-
                         }
-
                     }
-
                 }
             }
             catch (Exception e)
@@ -557,17 +537,14 @@ namespace ReadGcaPicture
 
             return true;
         }
-
-
     }
 
-
-    class ColorInfo
+    internal class ColorInfo
     {
-        int Key;
+        private int Key;
         private Color _value;
 
-        Color value
+        private Color value
         {
             get
             {
@@ -583,6 +560,5 @@ namespace ReadGcaPicture
         {
             Key = key;
         }
-
     }
 }

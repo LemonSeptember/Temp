@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace HT10D
+﻿namespace HT10D
 {
     public enum xfActCode : short
     {
@@ -496,6 +491,7 @@ namespace HT10D
         SpLCS_CUST = -10234,
         SpRsrv1_Cust = -10235,
         SpRsrv2_Cust = -10236,
+
         /// <summary>
         /// RAILWIGHT
         /// </summary>
@@ -526,9 +522,7 @@ namespace HT10D
         /// </summary>
         LobDist = -10242,
 
-
         #endregion
-
 
         B1_RWUT_a = -10300,
         B1_RWUT_b = -10301,
@@ -572,12 +566,13 @@ namespace HT10D
 
         #endregion
 
-        // STEP_BLANK_start = -11003, 
+        // STEP_BLANK_start = -11003,
 
         /// <summary>
         /// TODO::无对照？？
         /// </summary>
         STEP_BLANK_end = -11004,
+
         F9_NOTE = -11005,
         PLAY_BACK = -11006,
 
@@ -591,7 +586,6 @@ namespace HT10D
         TRIPID = -10405,
 
         #endregion
-
 
         #region HT10C+专用标示，起始-10600~-10700，暂定100个
 
@@ -626,18 +620,18 @@ namespace HT10D
         HT_RailDesc = -10605,
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HT_RailFactory = -10606,
 
         /// <summary>
         /// 钢种
-        /// </summary> 
+        /// </summary>
         HT_RailSteel = -10607,
 
         /// <summary>
         ///  炉号
-        /// </summary>  
+        /// </summary>
         HT_FurnaceNum = -10608,
 
         /// <summary>
@@ -677,27 +671,27 @@ namespace HT10D
 
         /// <summary>
         /// 增益增量
-        /// </summary>  
+        /// </summary>
         HT_GainDelta = -10616,
 
         /// <summary>
-        /// 声程 
-        /// </summary>  
+        /// 声程
+        /// </summary>
         HT_TestRange = -10617,
 
         /// <summary>
         /// 脉冲移位
-        /// </summary> 
+        /// </summary>
         HT_PulseShift = -10618,
 
         /// <summary>
         /// 发射
-        /// </summary> 
+        /// </summary>
         HT_Launch = -10619,
 
         /// <summary>
         /// 接收
-        /// </summary> 
+        /// </summary>
         HT_Receiving = -10620,
 
         /// <summary>
@@ -707,42 +701,42 @@ namespace HT10D
 
         /// <summary>
         /// 强度
-        /// </summary> 
+        /// </summary>
         HT_Intensity = -10622,
 
         /// <summary>
         /// 脉宽
-        /// </summary> 
+        /// </summary>
         HT_PulseWidth = -10623,
 
         /// <summary>
         /// 抑制
-        /// </summary> 
+        /// </summary>
         HT_Suppress = -10624,
 
         /// <summary>
         /// 频带
-        /// </summary> 
+        /// </summary>
         HT_Bandwidth = -10625,
 
         /// <summary>
         /// 检波
-        /// </summary> 
+        /// </summary>
         HT_Detection = -10626,
 
         /// <summary>
         /// 工作方式
-        /// </summary> 
+        /// </summary>
         HT_WorkMode = -10627,
 
         /// <summary>
         /// 探头类型
-        /// </summary> 
+        /// </summary>
         HT_ProbeType = -10628,
 
         /// <summary>
         /// 重复频率
-        /// <summary> 
+        /// <summary>
         HT_RepeatFreq = -10629,
 
         /// <summary>
@@ -752,26 +746,26 @@ namespace HT10D
 
         /// <summary>
         /// 零点延时
-        /// </summary> 
+        /// </summary>
         HT_ZeroDelay = -10631,
 
         /// <summary>
         /// 晶片
-        /// </summary> 
+        /// </summary>
         HT_Crystal = -10632,
 
         /// <summary>
         /// 探头频率
-        /// </summary> 
+        /// </summary>
         HT_ProbeFreq = -10633,
 
         /// <summary>
         /// 声速
-        /// </summary> 
+        /// </summary>
         HT_SoundVelocity = -10634,
 
         /// <summary>
-        /// 工件厚度 
+        /// 工件厚度
         /// </summary>
         HT_Thickness = -10635,
 
@@ -802,7 +796,7 @@ namespace HT10D
 
         /// <summary>
         /// 语言
-        /// </summary> 
+        /// </summary>
         HT_Language = -10641,
 
         /// <summary>
@@ -817,7 +811,7 @@ namespace HT10D
 
         /// <summary>
         /// 通道号
-        /// </summary> 
+        /// </summary>
         HT_ChanNum = -10644,
 
         /// <summary>
@@ -836,6 +830,5 @@ namespace HT10D
         HT_GateHight = -10647,
 
         #endregion
-
     }
 }
