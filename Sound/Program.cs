@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Form_KeyDown
+namespace Sound
 {
     static class Program
     {
@@ -15,8 +15,7 @@ namespace Form_KeyDown
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_KeyDown());
-            //Application.Run(new Form_KeyPress());
+            Application.Run(new FormSound());
         }
     }
 }

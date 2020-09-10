@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace DateTimeTest
@@ -28,7 +22,6 @@ namespace DateTimeTest
                 dateTime = DateTime.MinValue;
             }
             Console.WriteLine(dateTime);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -75,6 +68,14 @@ namespace DateTimeTest
             Console.WriteLine(" = " + timeSpan1.Milliseconds);
             Console.Write(dateTime2.ToLongTimeString() + " - " + dateTime0.ToLongTimeString());
             Console.WriteLine(" = " + timeSpan2.Milliseconds);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime(2020, 8, 29);
+            Console.WriteLine("DateTime.Now.Date = DateTime.Today ? " + (DateTime.Now.Date == DateTime.Today));
+            Console.WriteLine("date = DateTime.Today ? " + (date == DateTime.Today));
+            Console.WriteLine("date = DateTime.Now.Date ? " + (DateTime.Now.Date == date));
         }
     }
 }

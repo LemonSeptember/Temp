@@ -100,5 +100,12 @@ namespace BlockingCollection
 
             Console.ReadLine();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int a = -10;
+            int b = 4;
+            Console.WriteLine(a % b);
+        }
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{627E04C2-B382-4DDB-814E-1BE6AC208B2E}</ProjectGuid>
+    <ProjectGuid>{6DCA9006-9E3B-4ACF-BE21-0F69A0459715}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Form_KeyDown</RootNamespace>
-    <AssemblyName>Form_KeyDown</AssemblyName>
+    <RootNamespace>DoubleNum</RootNamespace>
+    <AssemblyName>DoubleNum</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,28 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_KeyDown.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_KeyDown.Designer.cs">
-      <DependentUpon>Form_KeyDown.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_KeyPress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_KeyPress.Designer.cs">
-      <DependentUpon>Form_KeyPress.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCNumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <EmbeddedResource Include="Form_KeyDown.resx">
-      <DependentUpon>Form_KeyDown.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_KeyPress.resx">
-      <DependentUpon>Form_KeyPress.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
