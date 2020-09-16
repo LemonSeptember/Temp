@@ -93,6 +93,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleNum", "DoubleNum\Doub
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopLevel", "TopLevel\TopLevel.csproj", "{EB43F616-DB01-4121-9782-72191C264D69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharText", "CharText\CharText.csproj", "{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTF8Text", "UTF8Text\UTF8Text.csproj", "{A185F85C-BBE7-4025-B827-E7800292B886}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -459,6 +463,22 @@ Global
 		{EB43F616-DB01-4121-9782-72191C264D69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB43F616-DB01-4121-9782-72191C264D69}.Release|x64.ActiveCfg = Release|Any CPU
 		{EB43F616-DB01-4121-9782-72191C264D69}.Release|x64.Build.0 = Release|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Debug|x64.Build.0 = Debug|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Release|x64.ActiveCfg = Release|Any CPU
+		{D563CB35-FE97-4EF9-BC20-A6B449DF01CD}.Release|x64.Build.0 = Release|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Debug|x64.Build.0 = Debug|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Release|x64.ActiveCfg = Release|Any CPU
+		{A185F85C-BBE7-4025-B827-E7800292B886}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
