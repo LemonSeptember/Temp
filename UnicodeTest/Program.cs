@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PictureBoxDemo
+namespace UnicodeTest
 {
     static class Program
     {
@@ -15,7 +16,7 @@ namespace PictureBoxDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPicture());
+            Application.Run(new Form_UnicodeTest());
         }
     }
 }

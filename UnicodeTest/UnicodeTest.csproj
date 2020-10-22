@@ -4,12 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0E8A059-E1F9-4231-84A0-F0DA6DA208E1}</ProjectGuid>
+    <ProjectGuid>{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PictureBoxDemo</RootNamespace>
-    <AssemblyName>PictureBoxDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>UnicodeTest</RootNamespace>
+    <AssemblyName>UnicodeTest</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,20 +41,21 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormPicture.cs">
+    <Compile Include="Form_UnicodeTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPicture.Designer.cs">
-      <DependentUpon>FormPicture.cs</DependentUpon>
+    <Compile Include="Form_UnicodeTest.Designer.cs">
+      <DependentUpon>Form_UnicodeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormPicture.resx">
-      <DependentUpon>FormPicture.cs</DependentUpon>
+    <EmbeddedResource Include="Form_UnicodeTest.resx">
+      <DependentUpon>Form_UnicodeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,6 +75,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

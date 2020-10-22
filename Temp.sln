@@ -101,6 +101,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockTest", "LockTest\LockTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataUnitCopy", "DataUnitCopy\DataUnitCopy.csproj", "{03558417-18EF-4F5C-BF78-C66AB1E91264}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnicodeTest", "UnicodeTest\UnicodeTest.csproj", "{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -499,6 +501,14 @@ Global
 		{03558417-18EF-4F5C-BF78-C66AB1E91264}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03558417-18EF-4F5C-BF78-C66AB1E91264}.Release|x64.ActiveCfg = Release|Any CPU
 		{03558417-18EF-4F5C-BF78-C66AB1E91264}.Release|x64.Build.0 = Release|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Debug|x64.Build.0 = Debug|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Release|x64.ActiveCfg = Release|Any CPU
+		{CAA69980-FB91-4CEA-85A5-73BB89DCECEF}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
