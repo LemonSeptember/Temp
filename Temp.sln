@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnicodeTest", "UnicodeTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bluetooth LE Test", "Bluetooth LE Test\Bluetooth LE Test.csproj", "{528CF7A7-F749-455E-ABA2-3ABF08BE3B93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryTest", "DictionaryTest\DictionaryTest.csproj", "{0286F66F-465E-4F90-BC2F-03B1D585C09F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -519,6 +521,14 @@ Global
 		{528CF7A7-F749-455E-ABA2-3ABF08BE3B93}.Release|Any CPU.Build.0 = Release|Any CPU
 		{528CF7A7-F749-455E-ABA2-3ABF08BE3B93}.Release|x64.ActiveCfg = Release|Any CPU
 		{528CF7A7-F749-455E-ABA2-3ABF08BE3B93}.Release|x64.Build.0 = Release|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Debug|x64.Build.0 = Debug|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Release|x64.ActiveCfg = Release|Any CPU
+		{0286F66F-465E-4F90-BC2F-03B1D585C09F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

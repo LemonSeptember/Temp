@@ -257,7 +257,7 @@ namespace Bluetooth_LE_Test
             if ((sender as RadioButton).Checked)
             {
                 mBluetoothCode2[8] = 0x01;
-                mBluetoothCode2[9] = 0x00;
+                mBluetoothCode2[9] = 0x01;
                 bluetooth.Write(mBluetoothCode2);
             }
         }
@@ -267,7 +267,7 @@ namespace Bluetooth_LE_Test
             if ((sender as RadioButton).Checked)
             {
                 mBluetoothCode2[8] = 0x01;
-                mBluetoothCode2[9] = 0x01;
+                mBluetoothCode2[9] = 0x00;
                 bluetooth.Write(mBluetoothCode2);
             }
         }
