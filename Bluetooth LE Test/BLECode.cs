@@ -73,7 +73,7 @@ namespace BLECode
         public delegate void BLEInfoHandle(string Name, string ID);
 
         /// <summary>
-        /// 定义一个事件
+        /// 传递蓝牙名称和地址
         /// </summary>
         public event BLEInfoHandle BLEInfoEvent;
 
@@ -160,12 +160,20 @@ namespace BLECode
             {
                 if (asyncStatus == AsyncStatus.Completed)
                 {
-                    BluetoothAdapter mBluetoothAdapter = asyncInfo.GetResults();
-                    byte[] _Bytes1 = BitConverter.GetBytes(mBluetoothAdapter.BluetoothAddress);//ulong转换为byte数组
-                    Array.Reverse(_Bytes1);
-                    string macAddress = BitConverter.ToString(_Bytes1, 2, 6).Replace('-', ':').ToLower();
-                    string Id = "BluetoothLE#BluetoothLE" + macAddress + "-" + MAC;
-                    await Matching(Id);
+                    try
+                    {
+                        BluetoothAdapter mBluetoothAdapter = asyncInfo.GetResults();
+                        byte[] _Bytes1 = BitConverter.GetBytes(mBluetoothAdapter.BluetoothAddress);//ulong转换为byte数组
+                        Array.Reverse(_Bytes1);
+                        string macAddress = BitConverter.ToString(_Bytes1, 2, 6).Replace('-', ':').ToLower();
+                        string Id = "BluetoothLE#BluetoothLE" + macAddress + "-" + MAC;
+                        await Matching(Id);
+                    }
+                    catch (Exception ex)
+                    {
+                        ValueChanged(MsgType.NotifyTxt, ex.ToString());
+                        Console.WriteLine(ex.ToString());
+                    }
                 }
             };
         }

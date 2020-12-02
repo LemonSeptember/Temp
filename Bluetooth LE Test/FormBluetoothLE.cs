@@ -11,6 +11,7 @@ namespace Bluetooth_LE_Test
         private BluetoothLECode bluetooth;
 
         private List<BluetoothInfo> mBluetoothInfoList;
+        private string BluetoothMAC = "11:89:20:08:65:a7";
 
         /// <summary>
         /// 服务UUID
@@ -24,6 +25,9 @@ namespace Bluetooth_LE_Test
         private byte[] mBluetoothCode1;
         private byte[] mBluetoothCode2;
 
+
+        private bool mConnect = false;
+
         public FormBluetoothLE()
         {
             InitializeComponent();
@@ -31,12 +35,16 @@ namespace Bluetooth_LE_Test
 
         private void FormBluetoothLE_Load(object sender, EventArgs e)
         {
+            maskedTextBox_BT1_Address.Text = "65A7";
+            maskedTextBox_BT2_Address.Text = "65C2";
+
             mBluetoothInfoList = new List<BluetoothInfo>();
             //var bluetooth = new BluetoothLECode(_serviceGuid, _writeCharacteristicGuid, _notifyCharacteristicGuid);
             //bluetooth = new BluetoothLECode("", "", "");
             bluetooth = new BluetoothLECode(characterUUID0, characterUUID3, "");
             bluetooth.ValueChanged += Bluetooth_ValueChanged;
             bluetooth.BLEInfoEvent += Bluetooth_BLEInfoEvent;
+
             SetByteList();
         }
 
@@ -90,9 +98,16 @@ namespace Bluetooth_LE_Test
         {
             try
             {
-                //string MAC = "11:89:20:08:65:c2";
-                string MAC = "11:89:20:08:44:a2";
-                _ = bluetooth.SelectDeviceFromIdAsync(MAC);
+                if (mConnect)
+                {
+                    return;
+                }
+                else
+                {
+                    _ = bluetooth.SelectDeviceFromIdAsync(BluetoothMAC);
+                    mConnect = true;
+                    button_Connect.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -103,6 +118,8 @@ namespace Bluetooth_LE_Test
         private void button_Break_Click(object sender, EventArgs e)
         {
             bluetooth.Dispose();
+            mConnect = false;
+            button_Connect.Enabled = true;
         }
 
         private void SetByteList()
@@ -111,8 +128,8 @@ namespace Bluetooth_LE_Test
             mBluetoothCode1[0] = 0xF1;
             mBluetoothCode1[1] = 0x01;
             mBluetoothCode1[2] = 0x10;
-            mBluetoothCode1[3] = 0x44;
-            mBluetoothCode1[4] = 0xA2;
+            mBluetoothCode1[3] = 0x65;
+            mBluetoothCode1[4] = 0xA7;
             mBluetoothCode1[5] = 0xAA;
             mBluetoothCode1[6] = 0xB1;
             mBluetoothCode1[7] = 0xE7;
@@ -130,6 +147,23 @@ namespace Bluetooth_LE_Test
             mBluetoothCode2[7] = 0xE7;
             mBluetoothCode2[8] = 0x01;
             mBluetoothCode2[9] = 0x00;
+
+            if (maskedTextBox_BT1_Address.MaskFull)
+            {
+                ushort value = Convert.ToUInt16(maskedTextBox_BT1_Address.Text, 16);
+                byte[] temp = BitConverter.GetBytes(value);
+                // 反向
+                mBluetoothCode1[3] = temp[1];
+                mBluetoothCode1[4] = temp[0];
+            }
+            if (maskedTextBox_BT2_Address.MaskFull)
+            {
+                ushort value = Convert.ToUInt16(maskedTextBox_BT2_Address.Text, 16);
+                byte[] temp = BitConverter.GetBytes(value);
+                // 反向
+                mBluetoothCode2[3] = temp[1];
+                mBluetoothCode2[4] = temp[0];
+            }
         }
 
         private void maskedTextBox_Bluetooth_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
