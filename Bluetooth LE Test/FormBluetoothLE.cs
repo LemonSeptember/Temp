@@ -25,7 +25,6 @@ namespace Bluetooth_LE_Test
         private byte[] mBluetoothCode1;
         private byte[] mBluetoothCode2;
 
-
         private bool mConnect = false;
 
         public FormBluetoothLE()
@@ -111,7 +110,7 @@ namespace Bluetooth_LE_Test
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "", MessageBoxButtons.OK);
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -150,19 +149,31 @@ namespace Bluetooth_LE_Test
 
             if (maskedTextBox_BT1_Address.MaskFull)
             {
-                ushort value = Convert.ToUInt16(maskedTextBox_BT1_Address.Text, 16);
-                byte[] temp = BitConverter.GetBytes(value);
-                // 反向
-                mBluetoothCode1[3] = temp[1];
-                mBluetoothCode1[4] = temp[0];
+                string hText = maskedTextBox_BT1_Address.Text.Substring(0, 2);
+                string lText = maskedTextBox_BT1_Address.Text.Substring(2, 2);
+                ushort hValue = Convert.ToUInt16(hText, 16);
+                ushort lValue = Convert.ToUInt16(lText, 16);
+                byte[] hByte = BitConverter.GetBytes(hValue);
+                byte[] lByte = BitConverter.GetBytes(lValue);
+                mBluetoothCode1[3] = hByte[0];
+                mBluetoothCode1[4] = lByte[0];
             }
             if (maskedTextBox_BT2_Address.MaskFull)
             {
-                ushort value = Convert.ToUInt16(maskedTextBox_BT2_Address.Text, 16);
-                byte[] temp = BitConverter.GetBytes(value);
-                // 反向
-                mBluetoothCode2[3] = temp[1];
-                mBluetoothCode2[4] = temp[0];
+                //ushort value = Convert.ToUInt16(maskedTextBox_BT2_Address.Text, 16);
+                //byte[] temp = BitConverter.GetBytes(value);
+                //// 反向
+                //mBluetoothCode2[3] = temp[1];
+                //mBluetoothCode2[4] = temp[0];
+
+                string hText = maskedTextBox_BT2_Address.Text.Substring(0, 2);
+                string lText = maskedTextBox_BT2_Address.Text.Substring(2, 2);
+                ushort hValue = Convert.ToUInt16(hText, 16);
+                ushort lValue = Convert.ToUInt16(lText, 16);
+                byte[] hByte = BitConverter.GetBytes(hValue);
+                byte[] lByte = BitConverter.GetBytes(lValue);
+                mBluetoothCode2[3] = hByte[0];
+                mBluetoothCode2[4] = lByte[0];
             }
         }
 
@@ -182,18 +193,22 @@ namespace Bluetooth_LE_Test
                 {
                     if (maskedTextBox_BT1_Address.MaskFull)
                     {
-                        ushort value = Convert.ToUInt16(maskedTextBox_BT1_Address.Text, 16);
-                        byte[] temp = BitConverter.GetBytes(value);
-                        // 反向
-                        mBluetoothCode1[3] = temp[1];
-                        mBluetoothCode1[4] = temp[0];
+                        string hText = maskedTextBox_BT1_Address.Text.Substring(0, 2);
+                        string lText = maskedTextBox_BT1_Address.Text.Substring(2, 2);
+                        ushort hValue = Convert.ToUInt16(hText, 16);
+                        ushort lValue = Convert.ToUInt16(lText, 16);
+                        byte[] hByte = BitConverter.GetBytes(hValue);
+                        byte[] lByte = BitConverter.GetBytes(lValue);
+                        mBluetoothCode1[3] = hByte[0];
+                        mBluetoothCode1[4] = lByte[0];
 
+                        maskedTextBox_BT1_Address.Text = maskedTextBox_BT1_Address.Text.ToUpper();
                         button_BT1_Change.Text = "更改";
                         maskedTextBox_BT1_Address.Enabled = false;
                     }
                     else
                     {
-                        throw new Exception("输入错误");
+                        throw new Exception("输入格式错误");
                     }
                 }
                 else
@@ -260,18 +275,22 @@ namespace Bluetooth_LE_Test
                 {
                     if (maskedTextBox_BT2_Address.MaskFull)
                     {
-                        ushort value = Convert.ToUInt16(maskedTextBox_BT2_Address.Text, 16);
-                        byte[] temp = BitConverter.GetBytes(value);
-                        // 反向
-                        mBluetoothCode2[3] = temp[1];
-                        mBluetoothCode2[4] = temp[0];
+                        string hText = maskedTextBox_BT2_Address.Text.Substring(0, 2);
+                        string lText = maskedTextBox_BT2_Address.Text.Substring(2, 2);
+                        ushort hValue = Convert.ToUInt16(hText, 16);
+                        ushort lValue = Convert.ToUInt16(lText, 16);
+                        byte[] hByte = BitConverter.GetBytes(hValue);
+                        byte[] lByte = BitConverter.GetBytes(lValue);
+                        mBluetoothCode2[3] = hByte[0];
+                        mBluetoothCode2[4] = lByte[0];
 
+                        maskedTextBox_BT2_Address.Text = maskedTextBox_BT2_Address.Text.ToUpper();
                         button_BT2_Change.Text = "更改";
                         maskedTextBox_BT2_Address.Enabled = false;
                     }
                     else
                     {
-                        throw new Exception("输入错误");
+                        throw new Exception("输入格式错误");
                     }
                 }
                 else
@@ -330,7 +349,7 @@ namespace Bluetooth_LE_Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (var item in mBluetoothInfoList)
+            foreach (BluetoothInfo item in mBluetoothInfoList)
             {
                 richTextBox1.AppendText(item.ID + "\n");
             }

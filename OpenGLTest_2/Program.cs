@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OpenGLTest
+namespace OpenGLTest_2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace OpenGLTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_OpenGL());
+            Application.Run(new Form_OpenGL_2());
         }
     }
 }

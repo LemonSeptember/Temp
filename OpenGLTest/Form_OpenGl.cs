@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace OpenGLTest
 {
-    public partial class Form_OpenGl : Form
+    public partial class Form_OpenGL : Form
     {
-        public Form_OpenGl()
+        public Form_OpenGL()
         {
             InitializeComponent();
         }
@@ -19,6 +19,7 @@ namespace OpenGLTest
             A_Gl = openGLControl1.OpenGL;
             InitDrawOpenGL(A_Gl, openGLControl1.Size);
             openGLControl1.OpenGLDraw += new RenderEventHandler(OpenGLControl1_OpenGLDraw);
+            //openGLControl1.OpenGLDraw += new RenderEventHandler(OpenGLControl1_OpenGLDraw);
         }
 
         private void InitDrawOpenGL(OpenGL gl, Size panelSize)
@@ -51,28 +52,29 @@ namespace OpenGLTest
             gl.ClearColor(backgroundColor.R / 255f, backgroundColor.G / 255f, backgroundColor.B / 255f, backgroundColor.A);
             gl.EnableClientState(OpenGL.GL_VERTEX_ARRAY);
             gl.Clear(OpenGL.GL_COLOR_BUFFER_BIT);
-
-            {
-                gl.LineWidth(3);
-                Color color = Color.Red;
-                gl.Color(color.R, color.G, color.B);
-                gl.LineStipple(2, 0xFE18);
-                gl.Enable(OpenGL.GL_LINE_STIPPLE);
-                gl.Begin(OpenGL.GL_LINES);
-                gl.Vertex(10, 10);
-                gl.Vertex(50, 50);
-                gl.End();
-                gl.Disable(OpenGL.GL_LINE_STIPPLE);
-            }
+            int centerX = 50;
+            int centerY = openGLControl1.Height - 50;
+         
             {
                 gl.PointSize(50);
-                int centerX = 10;
-                int centerY = 10;
                 Color color = Color.Red;
                 gl.Color(color.R, color.G, color.B);
                 gl.Begin(OpenGL.GL_POINTS);
                 gl.Vertex(centerX, centerY);
                 gl.End();
+            }
+
+            {
+                gl.LineWidth(3);
+                Color color = Color.Blue;
+                gl.Color(color.R, color.G, color.B);
+                gl.LineStipple(2, 0xFE18);
+                gl.Enable(OpenGL.GL_LINE_STIPPLE);
+                gl.Begin(OpenGL.GL_LINES);
+                gl.Vertex(10, 10);
+                gl.Vertex(centerX, centerY);
+                gl.End();
+                gl.Disable(OpenGL.GL_LINE_STIPPLE);
             }
         }
 
