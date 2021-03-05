@@ -330,7 +330,7 @@ namespace Bluetooth_LE_Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (var item in mBluetoothInfoList)
+            foreach (BluetoothInfo item in mBluetoothInfoList)
             {
                 richTextBox1.AppendText(item.ID + "\n");
             }

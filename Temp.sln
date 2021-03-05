@@ -115,6 +115,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchTimeTest", "SwitchTim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenGLTest", "OpenGLTest\OpenGLTest.csproj", "{0D7BC202-3F70-4EA4-8CCF-19A5A998BDEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersionTest", "VersionTest\VersionTest.csproj", "{DEED3109-EC72-4D12-8AAF-F01A613C9457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDocumentTest", "PrintDocumentTest\PrintDocumentTest.csproj", "{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -569,6 +573,22 @@ Global
 		{0D7BC202-3F70-4EA4-8CCF-19A5A998BDEC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0D7BC202-3F70-4EA4-8CCF-19A5A998BDEC}.Release|x64.ActiveCfg = Release|Any CPU
 		{0D7BC202-3F70-4EA4-8CCF-19A5A998BDEC}.Release|x64.Build.0 = Release|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Debug|x64.Build.0 = Debug|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Release|x64.ActiveCfg = Release|Any CPU
+		{DEED3109-EC72-4D12-8AAF-F01A613C9457}.Release|x64.Build.0 = Release|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
