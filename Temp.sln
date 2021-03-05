@@ -119,6 +119,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersionTest", "VersionTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDocumentTest", "PrintDocumentTest\PrintDocumentTest.csproj", "{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrowStringTest", "ArrowStringTest\ArrowStringTest.csproj", "{801B53DF-8711-474E-A931-51DF15D28FA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -589,6 +591,14 @@ Global
 		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|x64.ActiveCfg = Release|Any CPU
 		{51F2A89F-4812-4CAC-A86B-76FD5844C1B5}.Release|x64.Build.0 = Release|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Debug|x64.Build.0 = Debug|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|x64.ActiveCfg = Release|Any CPU
+		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
