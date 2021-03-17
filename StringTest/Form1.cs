@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StringTest
@@ -30,6 +24,19 @@ namespace StringTest
                 str = " ";
             }
             Console.WriteLine(str);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //string str = "焊缝，0,开始，003";
+            string str = "焊缝，,开始，003";
+            //string str = "L";
+            string[] markList = str.Split(',', '，');
+            for (int i = 0; i < markList.Length; i++)
+            {
+                string item = markList[i];
+                Console.WriteLine(i + " " + item);
+            }
         }
     }
 }

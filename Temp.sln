@@ -121,6 +121,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDocumentTest", "PrintD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrowStringTest", "ArrowStringTest\ArrowStringTest.csproj", "{801B53DF-8711-474E-A931-51DF15D28FA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifyIconTest", "NotifyIconTest\NotifyIconTest.csproj", "{87BDE029-BC6D-4F35-A219-C4A5193BEB08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -599,6 +601,14 @@ Global
 		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|x64.ActiveCfg = Release|Any CPU
 		{801B53DF-8711-474E-A931-51DF15D28FA0}.Release|x64.Build.0 = Release|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Debug|x64.Build.0 = Debug|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Release|x64.ActiveCfg = Release|Any CPU
+		{87BDE029-BC6D-4F35-A219-C4A5193BEB08}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
