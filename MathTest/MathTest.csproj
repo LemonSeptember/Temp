@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5495134B-1B55-4058-ABEC-D45316B195B6}</ProjectGuid>
+    <ProjectGuid>{3FCB8CA5-85FB-4378-8315-3A8C6E6F02F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>IP_Test</RootNamespace>
-    <AssemblyName>IP_Test</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>MathTest</RootNamespace>
+    <AssemblyName>MathTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -34,27 +34,27 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_IP_Test.cs">
+    <Compile Include="Form_MathTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_IP_Test.Designer.cs">
-      <DependentUpon>Form_IP_Test.cs</DependentUpon>
+    <Compile Include="Form_MathTest.Designer.cs">
+      <DependentUpon>Form_MathTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_IP_Test.resx">
-      <DependentUpon>Form_IP_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Form_MathTest.resx">
+      <DependentUpon>Form_MathTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +74,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

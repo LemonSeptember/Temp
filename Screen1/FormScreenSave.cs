@@ -16,6 +16,7 @@ namespace Screen1
         public FormScreenSave()
         {
             InitializeComponent();
+            toolTip1.SetToolTip(this, "Test String");
         }
 
         #region 初始化相关准备参数

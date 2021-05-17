@@ -80,6 +80,12 @@
     <Compile Include="FormScreenSave.Designer.cs">
       <DependentUpon>FormScreenSave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_SnippingTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SnippingTool.Designer.cs">
+      <DependentUpon>Form_SnippingTool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FmScreenCopy.resx">
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormScreenSave.resx">
       <DependentUpon>FormScreenSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SnippingTool.resx">
+      <DependentUpon>Form_SnippingTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
