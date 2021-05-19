@@ -129,6 +129,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTest", "MathTest\MathTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectX_Test", "DirectX_Test\DirectX_Test.csproj", "{3F894F18-4757-4D73-AF52-55420F802C8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullScreenTest", "FullScreenTest\FullScreenTest.csproj", "{5E814F72-D130-44B3-9773-BAB3673FF88F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -639,6 +641,14 @@ Global
 		{3F894F18-4757-4D73-AF52-55420F802C8C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F894F18-4757-4D73-AF52-55420F802C8C}.Release|x64.ActiveCfg = Release|Any CPU
 		{3F894F18-4757-4D73-AF52-55420F802C8C}.Release|x64.Build.0 = Release|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Debug|x64.Build.0 = Debug|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Release|x64.ActiveCfg = Release|Any CPU
+		{5E814F72-D130-44B3-9773-BAB3673FF88F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
