@@ -68,15 +68,17 @@ namespace ExportWord
             XWPFRun runImage = p3.CreateRun();
             runImage.SetFontFamily("宋体", FontCharRange.None);
             runImage.FontSize = 10;
-            MemoryStream ms = GetImageStream();
-            Bitmap barcodeImage = (Bitmap)Image.FromStream(ms);
-            pictureBox1.Image = barcodeImage;
+            //MemoryStream ms = GetImageStream();
+            //Bitmap barcodeImage = (Bitmap)Image.FromStream(ms);
+            //pictureBox1.Image = barcodeImage;
 
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
-            string imagefile = @".\123.jpg";
+            string imagefile = Path.Combine(desktopPath, @"123.jpg");
+            //string imagefile = @".\123.jpg";
             FileStream fileStream = new FileStream(imagefile, FileMode.Open);
 
-            runImage.AddPicture(fileStream, (int)PictureType.JPEG, "fileName", Units.ToEMU(500), Units.ToEMU(250));
+            runImage.AddPicture(fileStream, (int)PictureType.JPEG, Path.GetFileName(imagefile), Units.ToEMU(500), Units.ToEMU(250));
 
             //Clipboard.SetDataObject(barcodeImage);
 
@@ -127,7 +129,7 @@ namespace ExportWord
             {
                 throw ex;
             }
-            
+
         }
 
         private Bitmap GetBitmap()
@@ -188,7 +190,7 @@ namespace ExportWord
             r1c1.SetTextPosition(textPos);//设置高度         
             return pCell;
         }
-           
+
 
         static void SaveToFile(MemoryStream ms, string fileName)
         {

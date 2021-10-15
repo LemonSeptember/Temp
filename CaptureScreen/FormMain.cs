@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -123,6 +125,24 @@ namespace CaptureScreen
             FormMain form1 = new FormMain();
             form1.TopMost = true;
             form1.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string appPath = Application.StartupPath;
+            string snapshotPath = "snapshot.exe";
+            string exeFile = Path.Combine(appPath, snapshotPath);
+
+            if (File.Exists(exeFile))
+            {
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo startInfo = new ProcessStartInfo(exeFile, "");
+                    process.StartInfo = startInfo;
+                    process.Start();
+                }
+            }
+
         }
     }
 }

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OpenFileTest
@@ -29,6 +22,18 @@ namespace OpenFileTest
                 }
                 openFileDialog.ShowDialog();
                 Rapp.FirstOpen = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = File.OpenWrite(openFileDialog.FileName);
+                }
+
             }
         }
     }

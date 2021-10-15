@@ -1,7 +1,7 @@
 ﻿
-namespace OpenFileTest
+namespace NPOI_Test
 {
-    partial class Form_OpenFile
+    partial class Form_NPOI
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -30,37 +30,28 @@ namespace OpenFileTest
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(436, 121);
+            this.button1.Location = new System.Drawing.Point(561, 49);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(87, 29);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "OpenWord";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Form_NPOI
             // 
-            this.button2.Location = new System.Drawing.Point(460, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Form_OpenFile
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(740, 290);
             this.Controls.Add(this.button1);
-            this.Name = "Form_OpenFile";
+            this.Font = new System.Drawing.Font("Arial", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "Form_NPOI";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -69,7 +60,6 @@ namespace OpenFileTest
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
 
