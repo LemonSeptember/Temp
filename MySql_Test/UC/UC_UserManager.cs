@@ -28,6 +28,7 @@ namespace MySql_Test.UC
         {
             List<Status_UserCompany> company_List = Status_UserCompany.ListAll();
 
+
             company_List.Insert(0, new Status_UserCompany
             {
                 Cmp_Id = 0,
